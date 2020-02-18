@@ -333,7 +333,8 @@ export class PolylineSelector extends Selector {
     private onKeyUp(e: KeyboardEvent) {
         // Holding shift key enable square drawing mode
         if (e.code === "Escape") {
-            this.submitPolyline();
+            // ID3:「入力していないはずのラベルが出力される」対応のためコメントアウト
+            // this.submitPolyline();
         }
     }
 }

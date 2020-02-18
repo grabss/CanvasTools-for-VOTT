@@ -236,7 +236,8 @@ export class PolygonSelector extends Selector {
                 base: window,
                 listener: (e: KeyboardEvent) => {
                     if (e.code === "Escape") {
-                        this.submitPolygon();
+                        // ID3:「入力していないはずのラベルが出力される」対応のためコメントアウト
+                        // this.submitPolygon();
                     }
                 },
                 bypass: true,
