@@ -208,8 +208,14 @@ export class RegionData implements IRegionData, IMovable, IResizable {
      * @param height - New `height` of the region
      */
     public resize(width: number, height: number) {
-        const sx = width / this.width;
-        const sy = height / this.height;
+
+        /**
+         * IssueID #1
+         * https://github.com/grabss/VsLT/issues/1
+         * sx, syともにNaNの場合には強制的に0とすることでpointsへのNaNの代入を防止
+         */
+        const sx = isNaN(width / this.width) ? 0 : width / this.width;
+        const sy = isNaN(height / this.height) ? 0 : height / this.height;
 
         this.regionRect.resize(width, height);
 
