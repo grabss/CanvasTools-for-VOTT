@@ -130,20 +130,6 @@ export class Editor {
             type: ToolbarItemType.SEPARATOR,
         },
         {
-            type: ToolbarItemType.TRIGGER,
-            action: "delete-all-select",
-            iconFile: "delete-all-selection.svg",
-            tooltip: "Delete all regions",
-            keycode: "",
-            actionCallback: (action, rm, sl) => {
-                rm.deleteAllRegions();
-            },
-            activate: false,
-        },
-        {
-            type: ToolbarItemType.SEPARATOR,
-        },
-        {
             type: ToolbarItemType.SWITCH,
             action: "selection-lock",
             iconFile: "selection-lock.svg",
@@ -498,11 +484,11 @@ export class Editor {
         // Create SVG Element
         this.contentCanvas = this.createCanvasElement();
         this.editorSVG = this.createSVGElement();
-        
+
         this.editorContainerDiv = container;
         this.editorContainerDiv.classList.add("CanvasToolsContainer");
         this.editorContainerDiv.tabIndex = 0;
-        
+
         this.editorDiv = this.createDivElement();
         this.editorDiv.classList.add("CanvasToolsEditor");
 
@@ -927,7 +913,7 @@ export class Editor {
             this.editorContainerDiv = document.getElementsByClassName("CanvasToolsContainer")[0] as HTMLDivElement;
             this.editorDiv = document.getElementsByClassName("CanvasToolsEditor")[0] as HTMLDivElement;
         }
-        
+
         const containerWidth = this.editorContainerDiv.offsetWidth;
         const containerHeight = this.editorContainerDiv.offsetHeight;
 
