@@ -944,7 +944,12 @@ export class Editor {
 
         this.editorDiv.style.padding = `${vpadding}px ${hpadding}px`;
         // focus on the editor container div so that scroll bar can be used via arrow keys
-        this.editorContainerDiv.focus();
+        /**
+         * IssueID #51
+         * https://github.com/grabss/VsLT/issues/51
+         * ズーム時、フレーム移動時に強制的に画像内にフォーカスがあたるのでコメントアウト
+         */
+        // this.editorContainerDiv.focus();
     }
 
     /**
